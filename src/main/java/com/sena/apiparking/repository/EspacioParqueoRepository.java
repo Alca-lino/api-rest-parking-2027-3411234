@@ -23,5 +23,5 @@ public interface EspacioParqueoRepository extends JpaRepository<EspacioParqueo, 
 	
 	@Lock(LockModeType.PESSIMISTIC_WRITE)
 	@Query("select e from EspacioParqueo e where e.numero = :numero")
-	Optional<EspacioParqueo> nloquearPorNumero(@Param("numero") Integer numero);
+	Optional<EspacioParqueo> bloquearPorNumero(@Param("numero") Integer numero);
 }
